@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
 	<title>testing our index page </title>
 </head>
 <body>
 <p>hello world</p>
+<div ng-controller="meetupsController">
+	<h1>There are {{meetupsCount}} meetups</h1>
+	<ul>
+		<li ng-repeat=" meetup in meetups">
+			{{meetup.name}}
+		</li>
+	</ul>
+	<form ng-submit="createMeetup()">
+		<input type="text" placeholder="meetup name" ng-model="meetupName">
+		<button type="submit" >Add</button>
+	</form>
+</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+	<script type="text/javascript" src="/js/controller/meetups-controller.js"></script>
+
 </body>
 </html>
